@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="ocrDataAdminApp.edmsDownload.detail.title">Edms Download</span> {{vm.edmsDownload.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ocrDataAdminApp.edmsDownload.actualDirectory">Actual Directory</span></dt>
+        <dd>
+            <span>{{vm.edmsDownload.actualDirectory}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.edmsDownload.actualFilename">Actual Filename</span></dt>
+        <dd>
+            <span>{{vm.edmsDownload.actualFilename}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.edmsDownload.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.edmsDownload.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.edmsDownload.edmsResponse">Edms Response</span></dt>
+        <dd>
+            <a ui-sref="edms-responsemySuffix-detail({id:vm.edmsDownload.edmsResponseId})">{{vm.edmsDownload.edmsResponseId}}</a>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.edmsDownload.serviceResp">Service Resp</span></dt>
+        <dd>
+            <a ui-sref="service-respmySuffix-detail({id:vm.edmsDownload.serviceRespId})">{{vm.edmsDownload.serviceRespId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="edms-downloadmySuffix-detail.edit({id:vm.edmsDownload.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

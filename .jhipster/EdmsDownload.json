@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "edmsResponse",
+            "otherEntityName": "edmsResponse",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "serviceResp",
+            "otherEntityName": "serviceResp",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "edmsDownload"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "actualDirectory",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "actualFilename",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170124131938",
+    "entityTableName": "edms_download",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

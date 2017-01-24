@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myOcrSessionLabel" data-translate="ocrDataAdminApp.ocrSession.home.createOrEditLabel">Create or edit a Ocr Session</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.ocrSession.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.ocrSession.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.ocrSession.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.ocrSession.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.ocrSession.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.ocrSession.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.ocrSession.statusId" for="field_statusId">Status Id</label>
+            <input type="number" class="form-control" name="statusId" id="field_statusId"
+                    ng-model="vm.ocrSession.statusId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.ocrSession.serverFilePath" for="field_serverFilePath">Server File Path</label>
+            <input type="text" class="form-control" name="serverFilePath" id="field_serverFilePath"
+                    ng-model="vm.ocrSession.serverFilePath"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.ocrSession.filename" for="field_filename">Filename</label>
+            <input type="text" class="form-control" name="filename" id="field_filename"
+                    ng-model="vm.ocrSession.filename"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.ocrSession.createdBy" for="field_createdBy">Created By</label>
+            <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                    ng-model="vm.ocrSession.createdBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.ocrSession.updatedBy" for="field_updatedBy">Updated By</label>
+            <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
+                    ng-model="vm.ocrSession.updatedBy"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

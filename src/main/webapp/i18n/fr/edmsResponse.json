@@ -1,0 +1,35 @@
+{
+    "ocrDataAdminApp": {
+        "edmsResponse" : {
+            "home": {
+                "title": "EdmsResponses",
+                "createLabel": "Créer un nouveau Edms Response",
+                "createOrEditLabel": "Créer ou éditer un Edms Response",
+                "search": "Recherche pour Edms Response"
+            },
+            "created": "Un nouveau Edms Response a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Edms Response avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Edms Response avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Edms Response {{ id }} ?"
+            },
+            "detail": {
+                "title": "Edms Response"
+            },
+            "accountNumber": "Account Number",
+            "subRequestId": "Sub Request Id",
+            "requestDocType": "Request Doc Type",
+            "errorCode": "Error Code",
+            "errorDescription": "Error Description",
+            "promisedDirectory": "Promised Directory",
+            "responseDocType": "Response Doc Type",
+            "responseSubRequestId": "Response Sub Request Id",
+            "responseAeaCode": "Response Aea Code",
+            "responseDocCount": "Response Doc Count",
+            "directoryAvilableFlg": "Directory Avilable Flg",
+            "fileCount": "File Count",
+            "createdBy": "Created By",
+            "edmsDownload": "Edms Download"
+        }
+    }
+}

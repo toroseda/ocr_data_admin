@@ -1,0 +1,30 @@
+{
+    "ocrDataAdminApp": {
+        "ocrSession" : {
+            "home": {
+                "title": "OcrSessions",
+                "createLabel": "Créer un nouveau Ocr Session",
+                "createOrEditLabel": "Créer ou éditer un Ocr Session",
+                "search": "Recherche pour Ocr Session"
+            },
+            "created": "Un nouveau Ocr Session a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Ocr Session avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Ocr Session avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Ocr Session {{ id }} ?"
+            },
+            "detail": {
+                "title": "Ocr Session"
+            },
+            "name": "Name",
+            "description": "Description",
+            "statusId": "Status Id",
+            "serverFilePath": "Server File Path",
+            "filename": "Filename",
+            "createdBy": "Created By",
+            "updatedBy": "Updated By",
+            "sessionWf": "Session Wf",
+            "edmsRequest": "Edms Request"
+        }
+    }
+}

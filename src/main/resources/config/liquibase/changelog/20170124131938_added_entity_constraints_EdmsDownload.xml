@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity EdmsDownload.
+    -->
+    <changeSet id="20170124131938-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="edms_response_id"
+                                 baseTableName="edms_download"
+                                 constraintName="edms_download_edms_response_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="edms_response"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_resp_id"
+                                 baseTableName="edms_download"
+                                 constraintName="edms_download_service_resp_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service_resp"/>
+
+    </changeSet>
+</databaseChangeLog>

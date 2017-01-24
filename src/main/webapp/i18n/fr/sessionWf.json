@@ -1,0 +1,26 @@
+{
+    "ocrDataAdminApp": {
+        "sessionWf" : {
+            "home": {
+                "title": "SessionWfs",
+                "createLabel": "Créer un nouveau Session Wf",
+                "createOrEditLabel": "Créer ou éditer un Session Wf",
+                "search": "Recherche pour Session Wf"
+            },
+            "created": "Un nouveau Session Wf a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Session Wf avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Session Wf avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Session Wf {{ id }} ?"
+            },
+            "detail": {
+                "title": "Session Wf"
+            },
+            "statusId": "Status Id",
+            "wfTypeId": "Wf Type Id",
+            "createdBy": "Created By",
+            "updatedBy": "Updated By",
+            "ocrSession": "Ocr Session"
+        }
+    }
+}

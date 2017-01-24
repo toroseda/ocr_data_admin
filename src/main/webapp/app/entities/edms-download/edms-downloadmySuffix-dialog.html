@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEdmsDownloadLabel" data-translate="ocrDataAdminApp.edmsDownload.home.createOrEditLabel">Create or edit a Edms Download</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.edmsDownload.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.edmsDownload.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsDownload.actualDirectory" for="field_actualDirectory">Actual Directory</label>
+            <input type="text" class="form-control" name="actualDirectory" id="field_actualDirectory"
+                    ng-model="vm.edmsDownload.actualDirectory"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsDownload.actualFilename" for="field_actualFilename">Actual Filename</label>
+            <input type="text" class="form-control" name="actualFilename" id="field_actualFilename"
+                    ng-model="vm.edmsDownload.actualFilename"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsDownload.createdBy" for="field_createdBy">Created By</label>
+            <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                    ng-model="vm.edmsDownload.createdBy"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ocrDataAdminApp.edmsDownload.edmsResponse" for="field_edmsResponse">Edms Response</label>
+            <select class="form-control" id="field_edmsResponse" name="edmsResponse" ng-model="vm.edmsDownload.edmsResponseId" ng-options="edmsResponse.id as edmsResponse.id for edmsResponse in vm.edmsresponses"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="ocrDataAdminApp.edmsDownload.serviceResp" for="field_serviceResp">Service Resp</label>
+            <select class="form-control" id="field_serviceResp" name="serviceResp" ng-model="vm.edmsDownload.serviceRespId" ng-options="serviceResp.id as serviceResp.id for serviceResp in vm.serviceresps | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

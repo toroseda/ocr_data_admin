@@ -1,0 +1,8 @@
+version: '2'
+services:
+    ocr_data_admin-sonar:
+        container_name: ocr_data_admin-sonar
+        image: sonarqube:6.1-alpine
+        ports:
+            - 9000:9000
+            - 9092:9092

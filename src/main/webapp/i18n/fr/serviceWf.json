@@ -1,0 +1,24 @@
+{
+    "ocrDataAdminApp": {
+        "serviceWf" : {
+            "home": {
+                "title": "ServiceWfs",
+                "createLabel": "Créer un nouveau Service Wf",
+                "createOrEditLabel": "Créer ou éditer un Service Wf",
+                "search": "Recherche pour Service Wf"
+            },
+            "created": "Un nouveau Service Wf a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Service Wf avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Service Wf avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Service Wf {{ id }} ?"
+            },
+            "detail": {
+                "title": "Service Wf"
+            },
+            "statusId": "Status Id",
+            "createdBy": "Created By",
+            "updatedBy": "Updated By"
+        }
+    }
+}

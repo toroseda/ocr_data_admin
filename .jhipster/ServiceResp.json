@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "serviceWf",
+            "otherEntityName": "serviceWf",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "serviceResp"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "rawJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "documentImage",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastRunBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastRunDur",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lastRunDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170124131939",
+    "entityTableName": "service_resp",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

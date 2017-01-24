@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sessionWf",
+            "otherEntityName": "sessionWf",
+            "otherEntityRelationshipName": "ocrSession"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "edmsRequest",
+            "otherEntityName": "edmsRequest",
+            "otherEntityRelationshipName": "ocrSession"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "serverFilePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "filename",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170124131932",
+    "entityTableName": "ocr_session",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

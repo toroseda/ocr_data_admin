@@ -1,0 +1,24 @@
+{
+    "ocrDataAdminApp": {
+        "requestWf" : {
+            "home": {
+                "title": "RequestWfs",
+                "createLabel": "Créer un nouveau Request Wf",
+                "createOrEditLabel": "Créer ou éditer un Request Wf",
+                "search": "Recherche pour Request Wf"
+            },
+            "created": "Un nouveau Request Wf a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Request Wf avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Request Wf avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Request Wf {{ id }} ?"
+            },
+            "detail": {
+                "title": "Request Wf"
+            },
+            "statusId": "Status Id",
+            "createdBy": "Created By",
+            "updatedBy": "Updated By"
+        }
+    }
+}

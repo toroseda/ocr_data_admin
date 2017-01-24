@@ -1,0 +1,110 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEdmsRequestLabel" data-translate="ocrDataAdminApp.edmsRequest.home.createOrEditLabel">Create or edit a Edms Request</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.edmsRequest.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.edmsRequest.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.accountNumber" for="field_accountNumber">Account Number</label>
+            <input type="text" class="form-control" name="accountNumber" id="field_accountNumber"
+                    ng-model="vm.edmsRequest.accountNumber"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.subRequestId" for="field_subRequestId">Sub Request Id</label>
+            <input type="text" class="form-control" name="subRequestId" id="field_subRequestId"
+                    ng-model="vm.edmsRequest.subRequestId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.areaCode" for="field_areaCode">Area Code</label>
+            <input type="text" class="form-control" name="areaCode" id="field_areaCode"
+                    ng-model="vm.edmsRequest.areaCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.createdBy" for="field_createdBy">Created By</label>
+            <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                    ng-model="vm.edmsRequest.createdBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.startDate" for="field_startDate">Start Date</label>
+                <div class="input-group">
+                    <input id="field_startDate" type="text" class="form-control" name="startDate" datetime-picker="{{dateformat}}" ng-model="vm.edmsRequest.startDate" is-open="vm.datePickerOpenStatus.startDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.endDate" for="field_endDate">End Date</label>
+                <div class="input-group">
+                    <input id="field_endDate" type="text" class="form-control" name="endDate" datetime-picker="{{dateformat}}" ng-model="vm.edmsRequest.endDate" is-open="vm.datePickerOpenStatus.endDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.lastRunBy" for="field_lastRunBy">Last Run By</label>
+            <input type="text" class="form-control" name="lastRunBy" id="field_lastRunBy"
+                    ng-model="vm.edmsRequest.lastRunBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.lastRunDur" for="field_lastRunDur">Last Run Dur</label>
+            <input type="number" class="form-control" name="lastRunDur" id="field_lastRunDur"
+                    ng-model="vm.edmsRequest.lastRunDur"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.edmsRequest.lastRunDate" for="field_lastRunDate">Last Run Date</label>
+                <div class="input-group">
+                    <input id="field_lastRunDate" type="text" class="form-control" name="lastRunDate" datetime-picker="{{dateformat}}" ng-model="vm.edmsRequest.lastRunDate" is-open="vm.datePickerOpenStatus.lastRunDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastRunDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ocrDataAdminApp.edmsRequest.ocrSession" for="field_ocrSession">Ocr Session</label>
+            <select class="form-control" id="field_ocrSession" name="ocrSession" ng-model="vm.edmsRequest.ocrSessionId" ng-options="ocrSession.id as ocrSession.id for ocrSession in vm.ocrsessions"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="ocrDataAdminApp.edmsRequest.requestWf" for="field_requestWf">Request Wf</label>
+            <select class="form-control" id="field_requestWf" name="requestWf" ng-model="vm.edmsRequest.requestWfId" ng-options="requestWf.id as requestWf.id for requestWf in vm.requestwfs | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="ocrDataAdminApp.edmsRequest.edmsResponse" for="field_edmsResponse">Edms Response</label>
+            <select class="form-control" id="field_edmsResponse" name="edmsResponse" ng-model="vm.edmsRequest.edmsResponseId" ng-options="edmsResponse.id as edmsResponse.id for edmsResponse in vm.edmsresponses | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

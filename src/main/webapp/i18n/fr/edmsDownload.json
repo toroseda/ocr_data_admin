@@ -1,0 +1,26 @@
+{
+    "ocrDataAdminApp": {
+        "edmsDownload" : {
+            "home": {
+                "title": "EdmsDownloads",
+                "createLabel": "Créer un nouveau Edms Download",
+                "createOrEditLabel": "Créer ou éditer un Edms Download",
+                "search": "Recherche pour Edms Download"
+            },
+            "created": "Un nouveau Edms Download a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Edms Download avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Edms Download avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Edms Download {{ id }} ?"
+            },
+            "detail": {
+                "title": "Edms Download"
+            },
+            "actualDirectory": "Actual Directory",
+            "actualFilename": "Actual Filename",
+            "createdBy": "Created By",
+            "edmsResponse": "Edms Response",
+            "serviceResp": "Service Resp"
+        }
+    }
+}

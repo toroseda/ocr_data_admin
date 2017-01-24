@@ -1,0 +1,10 @@
+version: '2'
+services:
+    ocr_data_admin-elasticsearch:
+        container_name: ocr_data_admin-elasticsearch
+        image: elasticsearch:2.4.1
+        # volumes:
+        #     - ~/volumes/jhipster/ocr_data_admin/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300

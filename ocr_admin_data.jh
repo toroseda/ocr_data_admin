@@ -1,0 +1,140 @@
+
+
+
+// Hold the session information
+entity OcrSession {
+    name String,
+    description String,
+    statusId Integer,
+    serverFilePath String,
+    filename String,
+    createdBy String
+    updatedBy String,
+}
+
+// Show global workflow status for this session
+entity SessionWf {
+	statusId Integer,
+    wfTypeId Integer,
+    createdBy String, 
+    updatedBy String, 
+}
+
+entity EdmsRequest {
+    accountNumber String,
+    subRequestId String,
+    areaCode String,
+    createdBy String, 
+    startDate ZonedDateTime,
+	endDate ZonedDateTime,
+    lastRunBy String,
+    lastRunDur Integer,
+    lastRunDate ZonedDateTime
+}
+
+entity RequestWf {
+    statusId Integer,
+    createdBy String, 
+    updatedBy String, 
+}
+
+
+entity ServiceWf {
+    statusId Integer,
+    createdBy String, 
+    // createdDate ZonedDateTime,
+    updatedBy String, 
+    // updatedDate ZonedDateTime
+}
+entity EdmsResponse {
+	// id Integer,
+    // requestId Integer,
+    accountNumber String,
+    subRequestId String,
+    requestDocType String,
+    errorCode String,
+    errorDescription String,
+    promisedDirectory String, 
+    responseDocType String,
+    responseSubRequestId String,
+    responseAeaCode String,
+    responseDocCount Integer,
+    directoryAvilableFlg Integer,
+    fileCount Integer, 
+    createdBy String, 
+    // createdDate ZonedDateTime
+}
+
+// this next attribute must be updated by a trigger
+// which searches the promised downloads for population
+entity EdmsDownload {
+	// id Integer,
+    // responseId Integer,
+    actualDirectory String, 
+    actualFilename String,
+    createdBy String, 
+    // createdDate ZonedDateTime   
+}
+
+entity ServiceResp {
+    rawJson String,
+    documentImage Blob,
+    createdBy String, 
+    startDate ZonedDateTime,
+	endDate ZonedDateTime,
+    lastRunBy String,
+    lastRunDur Integer,
+    lastRunDate ZonedDateTime
+}
+
+// Let the RELATIONSHIPS START HERE BRO!!!!!! :-)
+
+relationship OneToMany {
+	OcrSession{sessionWf} to SessionWf 
+}
+
+relationship OneToMany {
+	OcrSession{edmsRequest} to EdmsRequest
+}
+
+relationship OneToOne {
+	EdmsRequest{requestWf} to RequestWf
+}
+
+relationship OneToOne {
+	EdmsRequest{edmsResponse} to EdmsResponse
+}
+
+relationship OneToMany {
+	EdmsResponse{edmsDownload} to EdmsDownload
+}
+
+relationship OneToOne {
+	// EdmsRequest{id} to EdmsResponse{responseId}
+    EdmsDownload{serviceResp} to ServiceResp
+}
+
+relationship OneToOne {
+	ServiceResp{serviceWf} to ServiceWf
+}
+
+
+
+
+// defining multiple oneToOne relationships
+// relationship OneToOne {
+//	JobHistory{job} to Job,
+//	JobHistory{department} to Department,
+//	JobHistory{employee} to Employee
+// }
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+// paginate Job with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl // except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix

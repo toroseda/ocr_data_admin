@@ -1,0 +1,58 @@
+
+<div>
+    <h2><span data-translate="ocrDataAdminApp.serviceResp.detail.title">Service Resp</span> {{vm.serviceResp.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.rawJson">Raw Json</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.rawJson}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.documentImage">Document Image</span></dt>
+        <dd>
+            <div ng-if="vm.serviceResp.documentImage">
+                <a ng-click="vm.openFile(vm.serviceResp.documentImageContentType, vm.serviceResp.documentImage)" data-translate="entity.action.open">open</a>
+                {{vm.serviceResp.documentImageContentType}}, {{vm.byteSize(vm.serviceResp.documentImage)}}
+            </div>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.endDate">End Date</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.lastRunBy">Last Run By</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.lastRunBy}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.lastRunDur">Last Run Dur</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.lastRunDur}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.lastRunDate">Last Run Date</span></dt>
+        <dd>
+            <span>{{vm.serviceResp.lastRunDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ocrDataAdminApp.serviceResp.serviceWf">Service Wf</span></dt>
+        <dd>
+            <a ui-sref="service-wfmySuffix-detail({id:vm.serviceResp.serviceWfId})">{{vm.serviceResp.serviceWfId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="service-respmySuffix-detail.edit({id:vm.serviceResp.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

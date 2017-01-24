@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity EdmsRequest.
+    -->
+    <changeSet id="20170124131934-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ocr_session_id"
+                                 baseTableName="edms_request"
+                                 constraintName="fk_edms_request_ocr_session_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ocr_session"/>
+
+        <addForeignKeyConstraint baseColumnNames="request_wf_id"
+                                 baseTableName="edms_request"
+                                 constraintName="fk_edms_request_request_wf_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="request_wf"/>
+
+        <addForeignKeyConstraint baseColumnNames="edms_response_id"
+                                 baseTableName="edms_request"
+                                 constraintName="edms_request_edms_response_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="edms_response"/>
+
+    </changeSet>
+</databaseChangeLog>

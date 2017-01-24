@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "ocrSession",
+            "otherEntityName": "ocrSession",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "requestWf",
+            "otherEntityName": "requestWf",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "edmsRequest"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "edmsResponse",
+            "otherEntityName": "edmsResponse",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "edmsRequest"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "accountNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subRequestId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "areaCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastRunBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastRunDur",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lastRunDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170124131934",
+    "entityTableName": "edms_request",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

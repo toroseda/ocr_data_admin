@@ -1,0 +1,108 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myServiceRespLabel" data-translate="ocrDataAdminApp.serviceResp.home.createOrEditLabel">Create or edit a Service Resp</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.serviceResp.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.serviceResp.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.serviceResp.rawJson" for="field_rawJson">Raw Json</label>
+            <input type="text" class="form-control" name="rawJson" id="field_rawJson"
+                    ng-model="vm.serviceResp.rawJson"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setDocumentImage($file, vm.serviceResp)">
+            <label class="control-label" data-translate="ocrDataAdminApp.serviceResp.documentImage" for="field_documentImage">Document Image</label>
+            <div>
+                <div ng-if="vm.serviceResp.documentImage" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.serviceResp.documentImageContentType, vm.serviceResp.documentImage)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.serviceResp.documentImageContentType}}, {{vm.byteSize(vm.serviceResp.documentImage)}}</span>
+                    <button type="button" ng-click="vm.serviceResp.documentImage=null;vm.serviceResp.documentImageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setDocumentImage($file, vm.serviceResp)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="documentImage" id="field_documentImage"
+                    ng-model="vm.serviceResp.documentImage"
+                     />
+            <input type="hidden" class="form-control" name="documentImageContentType" id="field_documentImageContentType"
+                    ng-model="vm.serviceResp.documentImageContentType" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.serviceResp.createdBy" for="field_createdBy">Created By</label>
+            <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                    ng-model="vm.serviceResp.createdBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.serviceResp.startDate" for="field_startDate">Start Date</label>
+                <div class="input-group">
+                    <input id="field_startDate" type="text" class="form-control" name="startDate" datetime-picker="{{dateformat}}" ng-model="vm.serviceResp.startDate" is-open="vm.datePickerOpenStatus.startDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.serviceResp.endDate" for="field_endDate">End Date</label>
+                <div class="input-group">
+                    <input id="field_endDate" type="text" class="form-control" name="endDate" datetime-picker="{{dateformat}}" ng-model="vm.serviceResp.endDate" is-open="vm.datePickerOpenStatus.endDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.serviceResp.lastRunBy" for="field_lastRunBy">Last Run By</label>
+            <input type="text" class="form-control" name="lastRunBy" id="field_lastRunBy"
+                    ng-model="vm.serviceResp.lastRunBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.serviceResp.lastRunDur" for="field_lastRunDur">Last Run Dur</label>
+            <input type="number" class="form-control" name="lastRunDur" id="field_lastRunDur"
+                    ng-model="vm.serviceResp.lastRunDur"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ocrDataAdminApp.serviceResp.lastRunDate" for="field_lastRunDate">Last Run Date</label>
+                <div class="input-group">
+                    <input id="field_lastRunDate" type="text" class="form-control" name="lastRunDate" datetime-picker="{{dateformat}}" ng-model="vm.serviceResp.lastRunDate" is-open="vm.datePickerOpenStatus.lastRunDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastRunDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ocrDataAdminApp.serviceResp.serviceWf" for="field_serviceWf">Service Wf</label>
+            <select class="form-control" id="field_serviceWf" name="serviceWf" ng-model="vm.serviceResp.serviceWfId" ng-options="serviceWf.id as serviceWf.id for serviceWf in vm.servicewfs | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

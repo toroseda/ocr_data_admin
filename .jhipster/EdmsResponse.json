@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "edmsDownload",
+            "otherEntityName": "edmsDownload",
+            "otherEntityRelationshipName": "edmsResponse"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "accountNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subRequestId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "requestDocType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "errorCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "errorDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "promisedDirectory",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responseDocType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responseSubRequestId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responseAeaCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responseDocCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "directoryAvilableFlg",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fileCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170124131937",
+    "entityTableName": "edms_response",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}
